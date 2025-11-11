@@ -1,0 +1,22 @@
+# ==== CONFIG (replace with your own) ====
+CF_TOKEN_ID = "<id>"                                # AUTH.[].id
+CF_TOKEN    = "<long string>"                       # AUTH.[].token
+CF_DOMAIN   = "test.example.com"                    # within AUTH.[].allowed
+
+CF_WORKER_URL = "https://ddns.yourdomain.tld"
+
+CF_IPV4_ENABLED = True
+CF_IPV6_ENABLED = False
+
+# optional remote ip providers
+CF_IPV4_UPDATE_URL = "https://ipv4.icanhazip.com"   # or None
+CF_IPV6_UPDATE_URL = None                           # e.g. "https://ipv6.icanhazip.com"
+
+# nic settings (ignored in this linux version unless you add psutil logic)
+CF_IPV4_NIC_INDEX = -1
+CF_IPV6_NIC_INDEX = -1
+CF_IPV6_NIC_ALLOW_LINKLOCAL = False
+
+CF_IPV4_NIC_AUTO_PUBLIC = True
+CF_IPV6_NIC_AUTO_PUBLIC = True
+# ========================================
