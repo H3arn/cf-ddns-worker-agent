@@ -73,7 +73,16 @@ def cf_update(ipv6=False):
         }
         body = json.dumps(payload, separators=(",", ":"))
         sign = hmac_sign(CF_TOKEN, body)
-        headers = {"Authorization": sign, "Content-Type": "application/json"}
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Authorization": sign, 
+            "Content-Type": "application/json"
+        }
         resp = requests.post(CF_WORKER_URL, headers=headers, data=body)
         resp.raise_for_status()
         print("success!")
