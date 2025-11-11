@@ -79,6 +79,7 @@ def cf_update(ipv6=False):
         print("success!")
     except Exception as e:
         print(f"failed: {e}")
+        print(resp.text)
 
 def main():
     if CF_IPV4_ENABLED:
