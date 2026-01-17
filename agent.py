@@ -27,6 +27,7 @@ def is_ipv6_public(addr: str) -> bool:
 
 def obtain_public_ip(ipv6=False):
     family = "IPv6" if ipv6 else "IPv4"
+    print(f"========================================")
     print(f"retrieving public {family} address...")
 
     # first, try remote URL if defined
@@ -89,6 +90,7 @@ def cf_update(ipv6=False):
     except Exception as e:
         print(f"failed: {e}")
         print(resp.text)
+    print(f"========================================")
 
 def main():
     if CF_IPV4_ENABLED:
